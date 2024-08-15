@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-container">
+        <select class="dropdown" id="dropdownSelect">
+            <option value="Everything">Everything</option>
+            <option value="Software Development">Software Development</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="IT Consultant">IT Consultant</option>
+            <option value="Network Administrator">Network Administrator</option>
+        </select>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search Everything...">
+        <button class="search-button">&#128269;</button>
+    </div>
+
+    <script>
+        document.getElementById('dropdownSelect').addEventListener('change', function() {
+            const selectedValue = this.value;
+            document.getElementById('searchInput').setAttribute('placeholder', 'Search in ' + selectedValue + '...');
+        });
+    </script>
+</body>
+</html>
