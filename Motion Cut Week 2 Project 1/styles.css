@@ -1,0 +1,86 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    perspective: 1000px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+}
+
+.slide {
+    position: absolute;
+    width: 60%;
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+    transform-origin: center center;
+    backface-visibility: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.slide:nth-child(1) {
+    transform: translateX(-100%) scale(0.8);
+}
+
+.slide:nth-child(2) {
+    transform: translateX(100%) scale(0.8);
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.navigation button {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 24px;
+}
+
+.navigation button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
